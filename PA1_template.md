@@ -1,14 +1,10 @@
----
-title: "Reproducible Research: Peer Assessment 1"
-output: 
-  html_document:
-    keep_md: true
----
+# Reproducible Research: Peer Assessment 1
 
 
 ## Loading and preprocessing the data
 
-```{r}
+
+```r
 # Some initialisations. The initial file is a zip provided in the repo
 InDirectory <- "Z:/Professionnel/Cours/repos/RepData_PeerAssessment1"
 ZipFile <- "activity.zip"
@@ -22,13 +18,14 @@ data<-read.csv(FullCSV)
 ```
 
 ## What is mean total number of steps taken per day?
-```{r}
 
+```r
 PerDay <-with(data, tapply(steps, date, sum, na.rm=TRUE))
 plot(PerDay, type="l", col="blue", xlab= "Day", ylab="Total Steps")
 abline(h=mean(PerDay), lwd=2, col="green")
-
 ```
+
+![](PA1_template_files/figure-html/unnamed-chunk-2-1.png)<!-- -->
 
 ## What is the average daily activity pattern?
 
